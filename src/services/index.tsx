@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL, TOKEN } from '../utils/constants';
+import { TOKEN } from '../utils/constants';
 
 import { PushMoreBody } from '../models/request';
 
@@ -10,7 +10,7 @@ import { PushMoreBody } from '../models/request';
 * @param {string} body.sender
 * @return {Promise<AxiosResponse>}
 */
-const pushMore = (body: PushMoreBody) => axios.post(`${BASE_URL}/${TOKEN}`, body);
+const pushMore = (body: PushMoreBody) => axios.post(`${TOKEN}`, body);
 
 const apis = {
   pushMore,

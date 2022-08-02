@@ -10,4 +10,6 @@ export interface ColorPalette {
   black: string;
   white: string;
   grey: string;
+  red: string;
+  green: string;
 }

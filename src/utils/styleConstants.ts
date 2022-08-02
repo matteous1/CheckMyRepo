@@ -16,5 +16,7 @@ export const colorPalette: ColorPalette = {
   black: '#000000',
   white: '#FFFFFF',
   grey: '#A6A6A6',
+  red: 'rgba(255, 111, 111, 0.8)',
+  green: 'rgba(177, 237, 185, 0.8)',
 };
 

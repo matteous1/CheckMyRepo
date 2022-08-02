@@ -2,27 +2,26 @@ import { AppState } from '../../models/app';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export const initialState: AppState = {
-  user: 'matteous1',
-  repo: 'CheckMyRepo',  
+  user: '',
+  repo: '',  
   status: null,
-  statusError: '',
 };
 
 export const slice = createSlice({
   name: 'app',
   initialState,
   reducers: {
+    setInitialState: (state: AppState) => {
+      state = initialState;
+    },
     setUser: (state: AppState, { payload }: PayloadAction<string>) => {
       state.user = payload;
     },
     setRepo: (state: AppState, { payload }: PayloadAction<string>) => {
       state.repo = payload;
     },
-    setStatus: (state: AppState, { payload }: PayloadAction<'fail' | 'success' | null>) => {
+    setStatus: (state: AppState, { payload }: PayloadAction<'failOne' | 'failTwo' | 'success' | null>) => {
       state.status = payload;
-    },
-    setStatusError: (state: AppState, { payload }: PayloadAction<string>) => {
-      state.statusError = payload;
     },
   },
 });

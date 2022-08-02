@@ -2,8 +2,10 @@ import { AppState } from '../../models/app';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export const initialState: AppState = {
-  user: '',
-  repo: '',  
+  user: 'matteous1',
+  repo: 'CheckMyRepo',  
+  status: null,
+  statusError: '',
 };
 
 export const slice = createSlice({
@@ -15,6 +17,12 @@ export const slice = createSlice({
     },
     setRepo: (state: AppState, { payload }: PayloadAction<string>) => {
       state.repo = payload;
+    },
+    setStatus: (state: AppState, { payload }: PayloadAction<'fail' | 'success' | null>) => {
+      state.status = payload;
+    },
+    setStatusError: (state: AppState, { payload }: PayloadAction<string>) => {
+      state.statusError = payload;
     },
   },
 });

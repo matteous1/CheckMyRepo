@@ -26,7 +26,9 @@ const Confirmation = () => {
       <SectionTwo>
         <FooterButton
           onClick={() => {
-            dispatch(action.setInitialState())
+            dispatch(action.setUser(''))
+            dispatch(action.setRepo(''))
+            dispatch(action.setStatus(null))
             navigate('/')
           }}>
             Cool

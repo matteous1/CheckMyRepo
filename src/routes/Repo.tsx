@@ -37,7 +37,7 @@ const Repo = () => {
             alt="back"
             onClick={() => navigate('/')}
           />
-          <Title>Username</Title>
+          <Title>Repository</Title>
         </Header>
         <InputContainer>
           <input

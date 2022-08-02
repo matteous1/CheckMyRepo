@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export const initialState: AppState = {
   user: '',
   repo: '',  
-  status: null,
+  status: 0,
 };
 
 export const slice = createSlice({
@@ -17,7 +17,7 @@ export const slice = createSlice({
     setRepo: (state: AppState, { payload }: PayloadAction<string>) => {
       state.repo = payload;
     },
-    setStatus: (state: AppState, { payload }: PayloadAction<'failOne' | 'failTwo' | 'failThree' | 'success' | null>) => {
+    setStatus: (state: AppState, { payload }: PayloadAction<AppState['status']>) => {
       state.status = payload;
     },
   },

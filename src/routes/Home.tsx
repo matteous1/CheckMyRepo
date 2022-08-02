@@ -39,7 +39,7 @@ const Home = () => {
   const status = useSelector(selectors.getStatus)
 
   useEffect(() => {
-    dispatch(action.setStatus(null))
+    dispatch(action.setStatus(0))
   }, [dispatch])
 
   const sendLinkToTelegram = async () => {
@@ -50,7 +50,7 @@ const Home = () => {
       });
       navigate('/confirmation')
     } catch (e) {
-      dispatch(action.setStatus('failThree'))  
+      dispatch(action.setStatus(3))  
       console.error(e);
     }   
   };
@@ -58,18 +58,18 @@ const Home = () => {
   const checkStatus = () => {
     if ((user && repo) && (!/\s/g.test(user) && !/\s/g.test(repo))) {
       if (navigator.onLine) {
-        dispatch(action.setStatus('success'))              
+        dispatch(action.setStatus(4))              
       } else {
-        dispatch(action.setStatus('failTwo'))     
+        dispatch(action.setStatus(2))     
       }
     } else {
-      dispatch(action.setStatus('failOne'))
+      dispatch(action.setStatus(1))
     }    
   }
 
   const getErrorMessage = () => {
     switch (status) {
-      case 'failOne':
+      case 1:
         return (
           <ErrorMessageContainer>
             <ErrorMessage>
@@ -80,7 +80,7 @@ const Home = () => {
             </ErrorMessage>
           </ErrorMessageContainer>
         )
-      case 'failTwo':
+      case 2:
         return (
           <ErrorMessageContainer>
             <ErrorMessage>
@@ -88,7 +88,7 @@ const Home = () => {
             </ErrorMessage>
           </ErrorMessageContainer>
         ) 
-      case 'failThree':
+      case 3:
         return (
           <ErrorMessageContainer>
             <ErrorMessage>
@@ -117,11 +117,11 @@ const Home = () => {
       <SectionTwo>
         <FooterButton
           onClick={
-            status === 'success' ?
+            status === 4 ?
             sendLinkToTelegram :
             checkStatus
           }>
-        {status === 'success' ? 'Send' : 'Check'}
+        {status === 4 ? 'Send' : 'Check'}
       </FooterButton>
       </SectionTwo>
     </Container>

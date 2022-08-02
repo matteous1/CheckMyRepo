@@ -28,7 +28,7 @@ const Confirmation = () => {
           onClick={() => {
             dispatch(action.setUser(''))
             dispatch(action.setRepo(''))
-            dispatch(action.setStatus(null))
+            dispatch(action.setStatus(0))
             navigate('/')
           }}>
             Cool

@@ -5,6 +5,8 @@ import {
   colorPalette,
 } from './utils/styleConstants';
 
+import { Status } from './models/app';
+
 
 export const Wrapper = styled.div`
   font-family: ${fontFamily};
@@ -12,14 +14,16 @@ export const Wrapper = styled.div`
   height: 100vh;
 `;
 
-export const Container = styled.div<{ status?: 'failOne' | 'failTwo' | 'failThree' | 'success' | null }>`
+export const Container = styled.div<{ status?: Status }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background-color: ${({ status }) => status === 'success' ?
+  background-color: ${({ status }) => status === 4 ?
     colorPalette.green :
-    (status === 'failOne' || status === 'failTwo' || status === 'failThree') ?
+    (status === 1 || 
+     status === 2 ||
+     status === 3) ?
     colorPalette.red :
     colorPalette.white
   };

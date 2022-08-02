@@ -11,11 +11,11 @@ import services from '../services';
 import selectors from '../state/app/selectors';
 import action from '../state/app/actions';
 
+import Header from '../component/Header';
 
 import { GIT_BASE_URL, SENDER } from '../utils/constants'
 
 import {
-  Header,
   Container,
   SectionOne,
   SectionTwo,
@@ -23,7 +23,6 @@ import {
   ErrorMessage,
   ErrorMessageBold,
   ErrorMessageContainer,
-  Title,
 } from '../styles';
 
 const StyledLink = styled(Link)`
@@ -105,9 +104,9 @@ const Home = () => {
   return (
     <Container status={status}>
       <SectionOne>
-        <Header>
-          <Title>Set the repository address</Title>
-        </Header>
+        <Header 
+          text='Set the repository address'
+        />
         <div>github.com</div>
         <div>/<StyledLink to={'/user'}>{user ? user : 'user'}</StyledLink></div>
         <div>/<StyledLink to={'/repo'}>{repo ? repo : 'repo'}</StyledLink></div>

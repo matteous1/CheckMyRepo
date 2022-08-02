@@ -6,18 +6,14 @@ import selectors from '../state/app/selectors';
 import action from '../state/app/actions';
 
 import Input from '../component/Input';
+import Header from '../component/Header';
 
 import {
-  Header,
   Container,
   SectionOne,
   SectionTwo,
   FooterButton,
-  Back,
-  Title,
 } from '../styles';
-
-import BackIcon from '../images/back.png';
 
 const Repo = () => {
   const dispatch = useDispatch()
@@ -32,14 +28,10 @@ const Repo = () => {
   return (
     <Container>
       <SectionOne>
-        <Header>
-          <Back
-            src={BackIcon}
-            alt="back"
-            onClick={() => navigate('/')}
-          />
-          <Title>REPOSITORY</Title>
-        </Header>
+        <Header 
+          text='REPOSITORY'
+          hasBackButton
+        />
         <Input
           value={repoValue}
           onChange={setRepoValue}

@@ -38,7 +38,7 @@ export const SectionTwo = styled.div`
   text-align: right;
 `;
 
-export const Header = styled.div`
+export const HeaderStyled = styled.div`
   display: flex;
   align-items: center;
   font-size: ${fontSizePalette.medium};

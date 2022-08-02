@@ -6,18 +6,14 @@ import selectors from '../state/app/selectors';
 import action from '../state/app/actions';
 
 import Input from '../component/Input';
+import Header from '../component/Header';
 
 import {
-  Header,
   Container,
   SectionOne,
   SectionTwo,
   FooterButton,
-  Back,
-  Title,
 } from '../styles';
-
-import BackIcon from '../images/back.png';
 
 const User = () => {
   const dispatch = useDispatch()
@@ -32,14 +28,10 @@ const User = () => {
   return (
     <Container>
       <SectionOne>
-        <Header>
-          <Back
-            src={BackIcon}
-            alt="back"
-            onClick={() => navigate('/')}
-          />
-          <Title>USERNAME</Title>
-        </Header>
+        <Header 
+          text='USERNAME'
+          hasBackButton
+        />
         <Input
           value={userValue}
           onChange={setUserValue}

@@ -7,12 +7,11 @@ import action from '../state/app/actions';
 
 import Input from '../component/Input';
 import Header from '../component/Header';
+import Footer from '../component/Footer';
 
 import {
   Container,
   SectionOne,
-  SectionTwo,
-  FooterButton,
 } from '../styles';
 
 const User = () => {
@@ -38,15 +37,13 @@ const User = () => {
           placeholder='Type your github username'  
         />
       </SectionOne>
-      <SectionTwo>
-        <FooterButton
-          onClick={() => {
-            dispatch(action.setUser(userValue))
-            navigate('/')
-          }}>
-            Done
-      </FooterButton>
-      </SectionTwo>
+      <Footer
+        value='Done'
+        onClick={() => {
+          dispatch(action.setUser(userValue))
+          navigate('/')
+        }}
+      />
     </Container>
   )
 }

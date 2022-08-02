@@ -7,12 +7,11 @@ import action from '../state/app/actions';
 
 import Input from '../component/Input';
 import Header from '../component/Header';
+import Footer from '../component/Footer';
 
 import {
   Container,
   SectionOne,
-  SectionTwo,
-  FooterButton,
 } from '../styles';
 
 const Repo = () => {
@@ -38,15 +37,13 @@ const Repo = () => {
           placeholder='Type your repository name'  
         />
       </SectionOne>
-      <SectionTwo>
-        <FooterButton
-          onClick={() => {
-            dispatch(action.setRepo(repoValue))
-            navigate('/')
-          }}>
-            Done
-      </FooterButton>
-      </SectionTwo>
+      <Footer
+        value='Done'
+        onClick={() => {
+          dispatch(action.setRepo(repoValue))
+          navigate('/')
+        }}
+      />
     </Container>
   )
 }

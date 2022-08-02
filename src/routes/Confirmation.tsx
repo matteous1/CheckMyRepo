@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import action from '../state/app/actions';
 
+import Footer from '../component/Footer';
+
 import {
   Container,
   SectionOne,
-  SectionTwo,
-  FooterButton,
   ConfirmationContainer,
 } from '../styles';
 
@@ -23,15 +23,13 @@ const Confirmation = () => {
           <div>Repository sent.</div>
         </ConfirmationContainer>
       </SectionOne>
-      <SectionTwo>
-        <FooterButton
-          onClick={() => {
-            dispatch(action.setDefaultState())
-            navigate('/')
-          }}>
-            Cool
-      </FooterButton>
-      </SectionTwo>
+      <Footer
+        value='Done'
+        onClick={() => {
+          dispatch(action.setDefaultState())
+          navigate('/')
+        }}
+      />
     </Container>
   )
 }

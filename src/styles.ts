@@ -33,11 +33,6 @@ export const SectionOne = styled.div`
   padding: 35px;
 `;
 
-export const SectionTwo = styled.div`
-  padding: 35px;
-  text-align: right;
-`;
-
 export const HeaderStyled = styled.div`
   display: flex;
   align-items: center;
@@ -60,10 +55,9 @@ export const ErrorMessageContainer = styled.div`
   padding-top: 20px;
 `;
 
-export const Footer = styled.div`
-  font-size: ${fontSizePalette.medium};
-  font-weight: 600;
-  padding: 40px 0;
+export const FooterContainer = styled.div`
+  padding: 35px;
+  text-align: right;
 `;
 
 export const FooterButton = styled.span`

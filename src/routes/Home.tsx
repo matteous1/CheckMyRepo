@@ -12,14 +12,13 @@ import selectors from '../state/app/selectors';
 import action from '../state/app/actions';
 
 import Header from '../component/Header';
+import Footer from '../component/Footer';
 
 import { GIT_BASE_URL, SENDER } from '../utils/constants'
 
 import {
   Container,
   SectionOne,
-  SectionTwo,
-  FooterButton,
   ErrorMessage,
   ErrorMessageBold,
   ErrorMessageContainer,
@@ -114,16 +113,14 @@ const Home = () => {
           getErrorMessage()
         }
       </SectionOne>
-      <SectionTwo>
-        <FooterButton
-          onClick={
-            status === 4 ?
-            sendLinkToTelegram :
-            checkStatus
-          }>
-        {status === 4 ? 'Send' : 'Check'}
-      </FooterButton>
-      </SectionTwo>
+      <Footer
+        value={status === 4 ? 'Send' : 'Check'}
+        onClick={
+          status === 4 ?
+          sendLinkToTelegram :
+          checkStatus
+        }
+      />
     </Container>
   )
 }

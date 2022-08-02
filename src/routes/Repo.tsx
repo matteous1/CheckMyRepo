@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import selectors from '../state/app/selectors';
 import action from '../state/app/actions';
 
+import Input from '../component/Input';
+
 import {
   Header,
   Container,
@@ -13,7 +15,6 @@ import {
   FooterButton,
   Back,
   Title,
-  InputContainer,
 } from '../styles';
 
 import BackIcon from '../images/back.png';
@@ -39,13 +40,11 @@ const Repo = () => {
           />
           <Title>Repository</Title>
         </Header>
-        <InputContainer>
-          <input
-            value={repoValue}
-            onChange={(e) => setRepoValue(e.target.value)}
-            placeholder='Type your repository name'  
-          />
-        </InputContainer>
+        <Input
+          value={repoValue}
+          onChange={setRepoValue}
+          placeholder='Type your repository name'  
+        />
       </SectionOne>
       <SectionTwo>
         <FooterButton

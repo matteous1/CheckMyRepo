@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import selectors from '../state/app/selectors';
 import action from '../state/app/actions';
 
+import Input from '../component/Input';
+
 import {
   Header,
   Container,
@@ -39,13 +41,11 @@ const User = () => {
           />
           <Title>Username</Title>
         </Header>
-        <InputContainer>
-          <input
-            value={userValue}
-            onChange={(e) => setUserValue(e.target.value)}
-            placeholder='Type your github username'  
-          />
-        </InputContainer>
+        <Input
+          value={userValue}
+          onChange={setUserValue}
+          placeholder='Type your github username'  
+        />
       </SectionOne>
       <SectionTwo>
         <FooterButton

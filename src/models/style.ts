@@ -1,3 +1,5 @@
+// Styles interfaces
+
 export interface FontSizePalette {
   small: string;
   medium: string;

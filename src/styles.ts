@@ -5,20 +5,21 @@ import {
   colorPalette,
 } from './utils/styleConstants';
 
+
 export const Wrapper = styled.div`
   font-family: ${fontFamily};
   font-size: ${fontSizePalette.large};
   height: 100vh;
 `;
 
-export const Container = styled.div<{ status?: 'failOne' | 'failTwo' | 'success' | null }>`
+export const Container = styled.div<{ status?: 'failOne' | 'failTwo' | 'failThree' | 'success' | null }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   background-color: ${({ status }) => status === 'success' ?
     colorPalette.green :
-    (status === 'failOne' || status === 'failTwo') ?
+    (status === 'failOne' || status === 'failTwo' || status === 'failThree') ?
     colorPalette.red :
     colorPalette.white
   };

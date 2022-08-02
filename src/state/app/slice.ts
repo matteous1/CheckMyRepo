@@ -20,7 +20,7 @@ export const slice = createSlice({
     setRepo: (state: AppState, { payload }: PayloadAction<string>) => {
       state.repo = payload;
     },
-    setStatus: (state: AppState, { payload }: PayloadAction<'failOne' | 'failTwo' | 'success' | null>) => {
+    setStatus: (state: AppState, { payload }: PayloadAction<'failOne' | 'failTwo' | 'failThree' | 'success' | null>) => {
       state.status = payload;
     },
   },

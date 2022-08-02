@@ -3,5 +3,5 @@
 export interface AppState {
   user: string;
   repo: string;
-  status: 'failOne' | 'failTwo' | 'success' | null;
+  status: 'failOne' | 'failTwo' | 'failThree' | 'success' | null;
 }

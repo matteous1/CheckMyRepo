@@ -44,14 +44,13 @@ const Home = () => {
 
   const sendLinkToTelegram = async () => {
     try {
-      const { data } = await services.pushMore({
+      await services.pushMore({
         repoUrl: `${GIT_BASE_URL}/${user}/${repo}`,
         sender: `${SENDER}`,
       });
-      if (data === 'OK') {
-        navigate('/confirmation')
-      }
+      navigate('/confirmation')
     } catch (e) {
+      dispatch(action.setStatus('failThree'))  
       console.error(e);
     }   
   };
@@ -69,26 +68,37 @@ const Home = () => {
   }
 
   const getErrorMessage = () => {
-    if (status === 'failOne') {
-      return (
-        <ErrorMessageContainer>
-          <ErrorMessage>
-            Check your <ErrorMessageBold>username</ErrorMessageBold>
-          </ErrorMessage>
-          <ErrorMessage>
-            or your <ErrorMessageBold>repository </ErrorMessageBold>name
-          </ErrorMessage>
-        </ErrorMessageContainer>
-      )
-    } else if (status === 'failTwo') {
-      return (
-        <ErrorMessageContainer>
-          <ErrorMessage>
-            Check your <ErrorMessageBold> internet connection</ErrorMessageBold>
-          </ErrorMessage>
-        </ErrorMessageContainer>
-      )      
-    }
+    switch (status) {
+      case 'failOne':
+        return (
+          <ErrorMessageContainer>
+            <ErrorMessage>
+              Check your <ErrorMessageBold>username</ErrorMessageBold>
+            </ErrorMessage>
+            <ErrorMessage>
+              or your <ErrorMessageBold>repository </ErrorMessageBold>name
+            </ErrorMessage>
+          </ErrorMessageContainer>
+        )
+      case 'failTwo':
+        return (
+          <ErrorMessageContainer>
+            <ErrorMessage>
+              Check your <ErrorMessageBold> internet connection</ErrorMessageBold>
+            </ErrorMessage>
+          </ErrorMessageContainer>
+        ) 
+      case 'failThree':
+        return (
+          <ErrorMessageContainer>
+            <ErrorMessage>
+              Something went wrong! Tray again!
+            </ErrorMessage>
+          </ErrorMessageContainer>
+        )
+      default: 
+        return null      
+    }    
   }
 
   return (

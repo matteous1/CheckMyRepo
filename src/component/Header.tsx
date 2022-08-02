@@ -8,12 +8,12 @@ import { useNavigate } from "react-router-dom";
 
 import BackIcon from '../images/back.png';
 
-export interface FooterProps {
+export interface HeaderProps {
   text: string;
   hasBackButton?: boolean;
 }
 
-const Header = (props: FooterProps) => {
+const Header = (props: HeaderProps) => {
   const { text , hasBackButton } = props
   const navigate = useNavigate()
 

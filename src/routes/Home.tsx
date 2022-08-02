@@ -13,15 +13,13 @@ import action from '../state/app/actions';
 
 import Header from '../component/Header';
 import Footer from '../component/Footer';
+import Error from '../component/Error';
 
 import { GIT_BASE_URL, SENDER } from '../utils/constants'
 
 import {
   Container,
   SectionOne,
-  ErrorMessage,
-  ErrorMessageBold,
-  ErrorMessageContainer,
 } from '../styles';
 
 const StyledLink = styled(Link)`
@@ -66,40 +64,6 @@ const Home = () => {
     }    
   }
 
-  const getErrorMessage = () => {
-    switch (status) {
-      case 1:
-        return (
-          <ErrorMessageContainer>
-            <ErrorMessage>
-              Check your <ErrorMessageBold>username</ErrorMessageBold>
-            </ErrorMessage>
-            <ErrorMessage>
-              or your <ErrorMessageBold>repository </ErrorMessageBold>name
-            </ErrorMessage>
-          </ErrorMessageContainer>
-        )
-      case 2:
-        return (
-          <ErrorMessageContainer>
-            <ErrorMessage>
-              Check your <ErrorMessageBold> internet connection</ErrorMessageBold>
-            </ErrorMessage>
-          </ErrorMessageContainer>
-        ) 
-      case 3:
-        return (
-          <ErrorMessageContainer>
-            <ErrorMessage>
-              Something went wrong! Tray again!
-            </ErrorMessage>
-          </ErrorMessageContainer>
-        )
-      default: 
-        return null      
-    }    
-  }
-
   return (
     <Container status={status}>
       <SectionOne>
@@ -109,9 +73,7 @@ const Home = () => {
         <div>github.com</div>
         <div>/<StyledLink to={'/user'}>{user ? user : 'user'}</StyledLink></div>
         <div>/<StyledLink to={'/repo'}>{repo ? repo : 'repo'}</StyledLink></div>
-        {
-          getErrorMessage()
-        }
+        <Error status={status} />
       </SectionOne>
       <Footer
         value={status === 4 ? 'Send' : 'Check'}

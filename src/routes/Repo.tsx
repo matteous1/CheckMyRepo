@@ -38,7 +38,7 @@ const Repo = () => {
             alt="back"
             onClick={() => navigate('/')}
           />
-          <Title>Repository</Title>
+          <Title>REPOSITORY</Title>
         </Header>
         <Input
           value={repoValue}

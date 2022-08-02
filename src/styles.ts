@@ -77,6 +77,7 @@ export const Back = styled.img`
   width: 20px;
   height: 20px;
   cursor: pointer;
+  padding-right: 50px;
 `;
 
 export const InputContainer = styled.div`
@@ -94,9 +95,7 @@ export const InputContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  text-transform: uppercase;
   font-weight: 700;
-  padding-left: 50px;
 `;
 
 export const ConfirmationContainer = styled.div`

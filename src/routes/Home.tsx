@@ -23,6 +23,7 @@ import {
   ErrorMessage,
   ErrorMessageBold,
   ErrorMessageContainer,
+  Title,
 } from '../styles';
 
 const StyledLink = styled(Link)`
@@ -105,7 +106,7 @@ const Home = () => {
     <Container status={status}>
       <SectionOne>
         <Header>
-          Set the repository address
+          <Title>Set the repository address</Title>
         </Header>
         <div>github.com</div>
         <div>/<StyledLink to={'/user'}>{user ? user : 'user'}</StyledLink></div>

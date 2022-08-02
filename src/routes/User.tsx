@@ -15,7 +15,6 @@ import {
   FooterButton,
   Back,
   Title,
-  InputContainer,
 } from '../styles';
 
 import BackIcon from '../images/back.png';
@@ -39,7 +38,7 @@ const User = () => {
             alt="back"
             onClick={() => navigate('/')}
           />
-          <Title>Username</Title>
+          <Title>USERNAME</Title>
         </Header>
         <Input
           value={userValue}

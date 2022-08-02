@@ -5,10 +5,10 @@ import app from './app/slice';
 
 const reducer = combineReducers({
   app,
-});
+})
 
 export const createStore = () => configureStore({
   reducer,
-});
-const store = createStore();
-export default store;
+})
+const store = createStore()
+export default store

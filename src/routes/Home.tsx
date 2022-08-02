@@ -32,11 +32,11 @@ const StyledLink = styled(Link)`
 `;
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = useSelector(selectors.getUser);
-  const repo = useSelector(selectors.getRepo);
-  const status = useSelector(selectors.getStatus);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const user = useSelector(selectors.getUser)
+  const repo = useSelector(selectors.getRepo)
+  const status = useSelector(selectors.getStatus)
 
   useEffect(() => {
     dispatch(action.setStatus(null))

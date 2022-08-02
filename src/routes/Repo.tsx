@@ -19,10 +19,10 @@ import {
 import BackIcon from '../images/back.png';
 
 const Repo = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const repo = useSelector(selectors.getRepo);
-  const [repoValue, setRepoValue] = useState<string>('');
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const repo = useSelector(selectors.getRepo)
+  const [repoValue, setRepoValue] = useState<string>('')
 
   useEffect(() => {
     setRepoValue(repo)

@@ -12,8 +12,8 @@ import {
 } from '../styles';
 
 const Confirmation = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   return (
     <Container>

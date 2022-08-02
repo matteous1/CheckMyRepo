@@ -23,4 +23,4 @@ export const slice = createSlice({
   },
 });
 
-export default slice.reducer;
+export default slice.reducer

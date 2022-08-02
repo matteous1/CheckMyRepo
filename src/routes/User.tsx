@@ -19,10 +19,10 @@ import {
 import BackIcon from '../images/back.png';
 
 const User = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = useSelector(selectors.getUser);
-  const [userValue, setUserValue] = useState<string>('');
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const user = useSelector(selectors.getUser)
+  const [userValue, setUserValue] = useState<string>('')
 
   useEffect(() => {
     setUserValue(user)

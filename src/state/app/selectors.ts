@@ -1,11 +1,11 @@
-import store from '../store'
+import store from '../store';
 export type RootState = ReturnType<typeof store.getState>
 
-const getUser = (state: RootState) => state.app.user;
+const getUser = (state: RootState) => state.app.user
 
-const getRepo = (state: RootState) => state.app.repo;
+const getRepo = (state: RootState) => state.app.repo
 
-const getStatus = (state: RootState) => state.app.status;
+const getStatus = (state: RootState) => state.app.status
 
 const selectors = {
   getUser,
@@ -13,4 +13,4 @@ const selectors = {
   getStatus,
 }
 
-export default selectors;
+export default selectors

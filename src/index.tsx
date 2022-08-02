@@ -1,4 +1,5 @@
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux';
 import store from './state/store';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -6,13 +7,18 @@ import { Wrapper } from './styles';
 
 import App from './App';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+
+root.render(
   <Provider store={store} >
     <Router>
+    <React.StrictMode>
       <Wrapper>
         <App />
       </Wrapper>
+    </React.StrictMode>
     </Router>
-  </Provider>,
-  document.querySelector('#root')
+  </Provider>
 )

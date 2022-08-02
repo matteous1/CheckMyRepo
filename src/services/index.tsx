@@ -10,12 +10,7 @@ import { PushMoreBody } from '../models/request';
 * @param {string} body.sender
 * @return {Promise<AxiosResponse>}
 */
-const pushMore = (body: PushMoreBody) => axios.post(`${BASE_URL}/${TOKEN}`, body, {
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json',
-  },
-});
+const pushMore = (body: PushMoreBody) => axios.post(`${BASE_URL}/${TOKEN}`, body);
 
 const apis = {
   pushMore,
